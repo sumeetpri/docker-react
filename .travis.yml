@@ -5,7 +5,7 @@ before_install:
   - docker image build -t sumeetpri/docker-react -f Dockerfile.dev .
 
 script:
-  - docker container run e CI=true sumeetpri/docker-react npm run test -- --coverage
+  - docker container run -e CI=true sumeetpri/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
